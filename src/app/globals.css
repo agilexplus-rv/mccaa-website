@@ -3,22 +3,89 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * MCCAA design tokens — extracted from mccaa.org.mt (Elementor kit + child theme).
+ * Every value here maps 1:1 to a colour, radius or type size used on the live site.
+ */
+:root {
+  /* Brand palette */
+  --color-dark: #33363c;
+  --color-gold: #cb904d;
+  --color-gold-dark: #a66e29;
+  --color-maroon: #75485e;
+  --color-cream: #fff7ef;
+  --color-cream-border: #ede6df;
+  --color-pale-gold: #f3edc3;
+  --color-pale-gold-bg: #f4edc3;
+  --color-light-gray: #f0f1f2;
+  --color-lighter-gray: #f5f5f7;
+  --color-teal: #65a0a1;
+  --color-body-text: #4d4d4d;
+  --color-input-text: #5e6168;
+  --color-on-maroon: #ebebeb;
+  --color-white: #ffffff;
+
+  /* Radii */
+  --radius-input: 8px;
+  --radius-card: 10px;
+  --radius-card-lg: 20px;
+  --radius-banner: 30px;
+  --radius-pill: 55px;
+
+  /* Layout */
+  --container-max: 1240px;
+  --container-wide: 1340px;
+}
+
 @theme inline {
-  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+  --font-sans: var(--font-funnel-sans), "Funnel Sans", ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-sans);
-  
-  /* MCCAA brand colors */
-  --color-brand-navy: #1a3a5c;
-  --color-brand-orange: #e84c22;
-  --color-brand-navy-dark: #0f2440;
+
+  /* Brand colours (usable as bg-brand-gold, text-brand-maroon, border-brand-cream, …) */
+  --color-brand-dark: var(--color-dark);
+  --color-brand-gold: var(--color-gold);
+  --color-brand-gold-dark: var(--color-gold-dark);
+  --color-brand-maroon: var(--color-maroon);
+  --color-brand-cream: var(--color-cream);
+  --color-brand-cream-border: var(--color-cream-border);
+  --color-brand-pale-gold: var(--color-pale-gold);
+  --color-brand-pale-gold-bg: var(--color-pale-gold-bg);
+  --color-brand-gray: var(--color-light-gray);
+  --color-brand-gray-light: var(--color-lighter-gray);
+  --color-brand-teal: var(--color-teal);
+  --color-brand-text: var(--color-body-text);
+  --color-brand-input: var(--color-input-text);
+  --color-brand-on-maroon: var(--color-on-maroon);
+
+  /* Radii (usable as rounded-input, rounded-card, rounded-card-lg, rounded-banner, rounded-pill) */
+  --radius-input: var(--radius-input);
+  --radius-card: var(--radius-card);
+  --radius-card-lg: var(--radius-card-lg);
+  --radius-banner: var(--radius-banner);
+  --radius-pill: var(--radius-pill);
+
+  /* Container widths (usable as max-w-container / max-w-container-wide) */
+  --container-container: var(--container-max);
+  --container-container-wide: var(--container-wide);
 }
 
 @layer base {
-  body {
-    @apply bg-white text-gray-900;
+  * {
+    @apply border-brand-dark/10;
   }
   html {
-    @apply font-sans;
+    @apply scroll-smooth font-sans;
+  }
+  body {
+    @apply bg-white text-brand-dark antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading;
+  }
+  ::placeholder {
+    @apply text-brand-input;
   }
 }
