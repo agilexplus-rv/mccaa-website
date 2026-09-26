@@ -1,6 +1,6 @@
 import type { WPPage, WPPost, WPMenuItem } from "@/types/wordpress";
 
-const WP_API = process.env.NEXT_PUBLIC_WP_API_URL || "https://cms.mccaa.agilexplus.dev/wp-json/wp/v2";
+const WP_API = process.env.NEXT_PUBLIC_WP_API_URL || "https://cms.mccaa.agilexplus.dev/index.php/wp-json/wp/v2";
 const WP_MENUS = process.env.NEXT_PUBLIC_WP_API_URL
   ? process.env.NEXT_PUBLIC_WP_API_URL.replace("wp/v2", "menus/v1")
   : "https://cms.mccaa.agilexplus.dev/wp-json/menus/v1";
